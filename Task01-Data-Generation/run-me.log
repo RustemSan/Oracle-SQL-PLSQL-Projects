@@ -1,0 +1,39 @@
+SANDIRUS> SELECT count(*) AS initial_teams FROM c_team
+[2026-02-24 15:29:02] 1 row retrieved starting from 1 in 37 ms (execution: 6 ms, fetching: 31 ms)
+SANDIRUS> BEGIN
+              -- Populate with 30 records and truncate existing data
+              fill_c_team(30, True);
+          END;
+[2026-02-24 15:29:02] completed in 6 ms
+Table c_Team cleared
+c_Team Table cleared
+Successfully inserted 30 rows into c_Team
+SANDIRUS> SELECT count(*) AS final_teams FROM c_team
+[2026-02-24 15:29:02] 1 row retrieved starting from 1 in 28 ms (execution: 7 ms, fetching: 21 ms)
+SANDIRUS> SELECT count(*) AS initial_tournaments FROM c_tournaments
+[2026-02-24 15:29:03] 1 row retrieved starting from 1 in 58 ms (execution: 10 ms, fetching: 48 ms)
+SANDIRUS> BEGIN
+              -- Populate with 10 records and truncate
+              fill_c_tournaments(10, True);
+          END;
+[2026-02-24 15:29:03] completed in 7 ms
+Table c_Tournaments cleared!
+Successfully inserted 10 rows into c_Tournaments
+SANDIRUS> SELECT count(*) AS final_tournaments FROM c_tournaments
+[2026-02-24 15:29:03] 1 row retrieved starting from 1 in 39 ms (execution: 8 ms, fetching: 31 ms)
+SANDIRUS> SELECT count(*) AS initial_relations FROM c_participation
+[2026-02-24 15:29:03] 1 row retrieved starting from 1 in 49 ms (execution: 8 ms, fetching: 41 ms)
+SANDIRUS> BEGIN
+              -- Generate 50 random relations between teams and tournaments
+              fill_c_participation(50);
+          END;
+[2026-02-24 15:29:03] completed in 11 ms
+Table c_Participation cleared!
+Succesfully inserted 10 rows
+Succesfully inserted 10 rows
+Succesfully inserted 10 rows
+Succesfully inserted 10 rows
+Succesfully inserted 10 rows
+-- Insertion Finished!
+SANDIRUS> SELECT count(*) AS final_relations FROM c_participation
+[2026-02-24 15:29:03] 1 row retrieved starting from 1 in 28 ms (execution: 6 ms, fetching: 22 ms)
